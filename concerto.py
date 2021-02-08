@@ -372,6 +372,7 @@ class Concerto(App):
     def build(self):
         self.DirectScreen = DirectScreen()
         self.sm.add_widget(self.DirectScreen)
+        self.DirectScreen.ids.background.source = resource_path("assets/bg.png")
         return self.sm
 
     def checkPop(self, *args):
