@@ -4,47 +4,118 @@
     name: 'Direct'
     userIP: userIP
     AnchorLayout:
-        anchor_x: 'center'
+        anchor_x: 'left'
+        anchor_y: 'top'
         canvas.before:
+        Image:
+            id: background
         GridLayout:
-            size_hint: (0.75,0.75)
+            size_hint: (1, 0.75)
             cols: 1
-            row_force_default: True
-            row_default_height: 30
             spacing: [0,10]
             Label:
                 text: 'Concerto (prototyping)'
-            BoxLayout:
+                font_size: 20
+                outline_width: 1
+            GridLayout:
+                rows: 1
                 TextInput:
                     multiline: False
                     id: userIP
-                    size_hint: (.5,1)
+                    padding_x: 50
+                    foreground_color: (255, 255, 255, 1)
+                    background_color: (255, 0, 0, 0.2)
                 Button:
-                    text: 'Join'
-                    on_release: root.join(userIP.text)
+                    text: 'JOIN'
+                    background_color: (0, 0, 0, 0)
+                    outline_width: 1
+                    on_press: self.background_color = (100, 0, 0, 0.9)
+                    on_release: 
+                        self.background_color = (0, 0, 0, 0)
+                        root.join(userIP.text)
                     size_hint: (.25,1)
                 Button:
-                    text: 'Watch'
-                    on_release: root.watch(userIP.text)
+                    text: 'WATCH'
+                    background_color: (0, 0, 0, 0)
+                    outline_width: 1
                     size_hint: (.25,1)
+                    on_press: self.background_color = (100, 0, 0, 0.9)
+                    on_release: 
+                        self.background_color = (0, 0, 0, 0)
+                        root.watch(userIP.text)
             Button:
-                text: 'Host Versus'
-                on_release: root.host()
+                text: 'HOST VERSUS'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                padding_x: 50
+                background_color: (0, 0, 0, 0)
+                outline_width: 1
+                on_press: self.background_color = (100, 0, 0, 0.9)
+                on_release: 
+                    self.background_color = (0, 0, 0, 0)
+                    root.host()
             Button:
-                text: 'Training Mode'
-                on_release: root.training()
+                text: 'TRAINING'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                padding_x: 50
+                background_color: (0, 0, 0, 0)
+                outline_width: 1
+                on_press: self.background_color = (100, 0, 0, 0.9)
+                on_release: 
+                    self.background_color = (0, 0, 0, 0)
+                    root.training()
             Button:
-                text: 'Replay Theater'
-                on_release: root.replays()
+                text: 'REPLAY THEATER'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                padding_x: 50
+                background_color: (0, 0, 0, 0)
+                outline_width: 1
+                on_press: self.background_color = (100, 0, 0, 0.9)
+                on_release: 
+                    self.background_color = (0, 0, 0, 0)
+                    root.replays()
             Button:
-                text: 'Local VS'
-                on_release: root.local()
+                text: 'LOCAL VERSUS'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                padding_x: 50
+                background_color: (0, 0, 0, 0)
+                outline_width: 1
+                on_press: self.background_color = (100, 0, 0, 0.9)
+                on_release: 
+                    self.background_color = (0, 0, 0, 0)
+                    root.local()
             Button:
-                text: 'Tournament Local VS'
-                on_release: root.tournament()
-            Button:
-                text: 'Read the Wiki'
-                on_release: webbrowser.open('https://wiki.gbl.gg/w/Melty_Blood/MBAACC')
+                text: 'TOURNAMENT LOCAL VERSUS'
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                padding_x: 50
+                background_color: (0, 0, 0, 0)
+                outline_width: 1
+                on_press: self.background_color = (100, 0, 0, 0.9)
+                on_release: 
+                    self.background_color = (0, 0, 0, 0)
+                    root.tournament()
+
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'bottom'
+        Button:
+            text: 'WIKI'
+            background_color: (0, 0, 0, 0)
+            outline_width: 1
+            on_press: self.background_color = (100, 0, 0, 0.9)
+            on_release: 
+                self.background_color = (0, 0, 0, 0)
+                webbrowser.open('https://wiki.gbl.gg/w/Melty_Blood/MBAACC')
+            size_hint: (0.1, 0.1)
 
 <GameModal>
     modalTxt: modalTxt
